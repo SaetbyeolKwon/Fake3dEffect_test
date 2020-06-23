@@ -36,10 +36,34 @@ body {
 }
 
 #gl {
-	width: 100vw;
-	height: 100vh;
+	width: 50vw;
+	height: 50vh;
 	left: 0;
 	top: 0;
+	position: absolute;
+}
+
+#gl2 {
+	width: 50vw;
+	height: 50vh;
+	left: 50vw;
+	top: 0;
+	position: absolute;
+}
+
+#gl3 {
+	width: 50vw;
+	height: 50vh;
+	left: 0vw;
+	top: 50vh;
+	position: absolute;
+}
+
+#gl4 {
+	width: 50vw;
+	height: 50vh;
+	left: 50vw;
+	top: 50vh;
 	position: absolute;
 }
 
