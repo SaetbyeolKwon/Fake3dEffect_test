@@ -180,8 +180,8 @@ export default class Sketch {
   mouseMove() {
   	let that = this;
   	document.addEventListener('mousemove', function(e) {
-      let halfX = that.windowWidth/2;
-      let halfY = that.windowHeight/2;
+      let halfX = that.width/2;
+      let halfY = that.height/2;
 
   		that.mouseTargetX = (halfX - e.clientX)/halfX;
   		that.mouseTargetY = (halfY - e.clientY)/halfY;
