@@ -211,7 +211,7 @@ a:focus {
 .menu {
 	position: fixed;
 	/* margin: 20px; */
-	top: 95vh;
+	top: 97vh;
 	left: 90vw;
 	/* width: 100%; */
 	z-index: 10000;
