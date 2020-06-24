@@ -22,52 +22,39 @@ body {
 	overscroll-behavior: none;
 }
 
-.demo-2 {
-	font-family: Futura, "futura-pt", Arial, sans-serif;
+.whitebg{
+	background-color: white;
 }
 
-.demo-2,
-.demo-3 {
-    --color-link: #fbc966;
-}
-
-.demo-4 {
-    --color-link: #52e093;
+#gl1, #gl2, #gl3, #gl4 {
+	width: 50%;
+	height: 50%;
+	margin: 0 auto;
+	position: Absolute ;
 }
 
 #gl1 {
-	width: 50vw;
-	height: 50vh;
 	left: 0;
 	top: 0;
-	position: absolute;
 }
 
 #gl2 {
-	width: 50vw;
-	height: 50vh;
 	left: 50vw;
 	top: 0;
-	position: absolute;
 }
 
 #gl3 {
-	width: 50vw;
-	height: 50vh;
 	left: 0vw;
 	top: 50vh;
-	position: absolute;
 }
 
 #gl4 {
-	width: 50vw;
-	height: 50vh;
 	left: 50vw;
 	top: 50vh;
-	position: absolute;
 }
 
 canvas {
+	padding: 50px;
 	display: block;
 }
 
@@ -107,9 +94,14 @@ canvas {
 }
 
 a {
+	font-size: large;
 	text-decoration: none;
-	color: var(--color-link);
+	color: inherit;
 	outline: none;
+}
+
+.aw {
+	color: black;
 }
 
 a:hover,
@@ -131,14 +123,19 @@ a:focus {
 
 .frame {
 	padding: 3rem 5vw;
-	text-align: center;
 	position: relative;
 	z-index: 1000;
 	height: 100vh;
-	display: flex;
-	flex-direction: column;
-	align-items: center;
-	justify-content: center;
+	display: grid;
+	grid-template-columns: 75% 25%;
+	grid-template-rows: auto auto auto;
+	grid-template-areas: 'title links'
+						 'content content'
+						 'github demos'
+	/* display: flex; */
+	/* flex-direction: column; */
+	/* align-items: center; */
+	/* justify-content: center; */
 }
 
 .frame > * {
@@ -179,37 +176,49 @@ a:focus {
 }
 
 .frame__content {
-	line-height: 0.8;
+	position: fixed;
+	top: 42.5vh;
+	width: 100%;
+	grid-area: content;
+	margin: 0;
+	line-height: 1;
 	pointer-events: none;
-	margin-top: 13vh;
-	font-size: 40vw;
+	/* margin-top: 13vh; */
+	/* padding-top: 43vh; */
+	font-size: 8vw;
 	font-family: essonnes-display, serif;
 	mix-blend-mode: soft-light;
 	font-weight: normal;
 	text-align: center;
-	color: #c2ba8b;
+	color: #ffee8ab9;
 }
 
-.demo-2 .frame__content {
-	font-size: 9vw;
-	text-transform: uppercase;
-	font-weight: bold;
-	mix-blend-mode: soft-light;
-	text-align: left;
-	color: #fff;
-	font-family: Futura, "futura-pt", Arial, sans-serif;
+.frame__contentw {
+	position: fixed;
+	top: 42.5vh;
+	width: 100%;
+	line-height: 1;
+	pointer-events: none;
+	/* padding-top: 43vh; */
+	font-size: 8vw;
+	font-family: essonnes-display, serif;
+	mix-blend-mode: normal;
+	font-weight: normal;
+	text-align: center;
+	color: black;
 }
 
-.demo-3 .frame__content {
-	color: #24211d;
+.menu {
+	position: fixed;
+	/* margin: 20px; */
+	top: 95vh;
+	left: 90vw;
+	/* width: 100%; */
+	z-index: 10000;
+	text-align: right;
 }
 
-.demo-4 .frame__content {
-	color: #75c298;
-	mix-blend-mode: overlay;
-}
-
-@media screen and (min-width: 53em) {
+@media screen and (max-width: 53em) {
 	.message {
 		display: none;
 	}
@@ -232,6 +241,11 @@ a:focus {
 							'content content'
 							'github demos';
 	}
+
+	canvas{
+		padding: 20px;
+	}
+
 	.frame__title-wrap {
 		grid-area: title;
 		display: flex;
@@ -262,6 +276,13 @@ a:focus {
 		justify-self: end;
 	}
 	.frame__content {
+		top:47vh;
+		grid-area: content;
+		margin: 0;
+		color: var(--color-link);
+	}
+	.frame__contentw {
+		top:47vh;
 		grid-area: content;
 		margin: 0;
 	}
